@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <title>Predicted results</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body style="background-color:rgb(253,253,253);">
+<div id="maintext" style="position:absolute; margin:auto; width:700px; height:300px; text-align:center; top:0; bottom: 0; left: 0; right: 0;">
+  <h1 class="text-dark mb-5">Predicted results</h1>
+  <p class="text-dark"> The algorithm gave the following predictions </p>
+  <table class="table table-light table-bordered table-striped" style="width:100%">
+  <thead class="thead-light">
+  <tr>
+    <th>Class</th>
+    <th>Probability</th>
+  </tr>
+  <thead class="thead-light">
+  <tr>
+    <td>{{ predictions.class1 }}</td>
+    <td>{{ predictions.prob1 }}</td>
+  </tr>
+  <tr>
+    <td>{{ predictions.class2 }}</td>
+    <td>{{ predictions.prob2 }}</td>
+  </tr>
+
+
+	<tr>
+		<td colspan=2><i class="text-dark mb-5">Model VGG: (AT:94.36|AV:87.97|R:85|P:87) </i><br/></td>
+	</tr>
+	<tr>
+		<td colspan=2><i class="text-dark mb-5">AT:Accuracy Test | AV:Accuracy Validation | R: Recall | P: precision </i><br/></td>
+    </tr>
+    </table>
+	
+	
+	<a href="{{ url_for('main_page') }}"><button class="button mt-3">Try again?</button></a>
+</div>
+</body>
+</html>
