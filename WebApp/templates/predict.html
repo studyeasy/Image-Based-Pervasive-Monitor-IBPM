@@ -1,5 +1,4 @@
-<!doctype html>
-<html>
+<!doctype html><html>
 <head>
     <title>Predicted results</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -7,7 +6,7 @@
 <body style="background-color:rgb(253,253,253);">
 <div id="maintext" style="position:absolute; margin:auto; width:700px; height:300px; text-align:center; top:0; bottom: 0; left: 0; right: 0;">
   <h1 class="text-dark mb-5">Predicted results</h1>
-  <p class="text-dark"> The algorithm gave the following predictions </p>
+  <p class="text-dark"> The algorithm gave the following predictions. </p>
   <table class="table table-light table-bordered table-striped" style="width:100%">
   <thead class="thead-light">
   <tr>
@@ -17,19 +16,31 @@
   <thead class="thead-light">
   <tr>
     <td>{{ predictions.class1 }}</td>
-    <td>{{ predictions.prob1 }}</td>
+    <td>{{ predictions.prob1 }}%</td>
   </tr>
   <tr>
     <td>{{ predictions.class2 }}</td>
-    <td>{{ predictions.prob2 }}</td>
+    <td>{{ predictions.prob2 }}%</td>
   </tr>
-
+  
+  <tr>
+		<td colspan=2><b class="text-dark mb-5">Model used: {{ ensembleResult.status }} <br/></b></td>
+	</tr>
 
 	<tr>
-		<td colspan=2><i class="text-dark mb-5">Model VGG: (AT:94.36|AV:87.97|R:85|P:87) </i><br/></td>
+		<td colspan=2><u class="text-dark mb-5">Model ensemble details <br/></u></td>
 	</tr>
 	<tr>
-		<td colspan=2><i class="text-dark mb-5">AT:Accuracy Test | AV:Accuracy Validation | R: Recall | P: precision </i><br/></td>
+		<td colspan=2><i class="text-dark mb-5">Model Inception: (A:93.43% | R:99.49% | P:99.87% | F:94.98%) </i><br/>
+		Model VGG: (A:91.03% | R:95.90% | P:90.34% | F:93.03%) <br/>
+		Model ResNet: (A:88.62% | R:92.82% | P:89.38% | F:91.07%) <br/>
+		Model ResNet: (A:88.62% | R:92.82% | P:89.38% | F:91.07%) <br/>
+		Ensemble of models: (A:95.35% | R:95.24% | P:97.44% | F:96.32%) <br/>
+		</td>
+		
+	</tr>
+	<tr>
+		<td colspan=2><i class="text-dark mb-5">A:Accuracy | R: Recall | P: precision : | F: F1 scope </i><br/></td>
     </tr>
     </table>
 	
